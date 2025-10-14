@@ -3,20 +3,23 @@
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { useRouter } from "next/navigation";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { useRef, RefObject } from "react";
+import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
-function scroll(ref: RefObject<HTMLDivElement>, direction: "left" | "right") {
-  if (ref.current) {
-    const scrollAmount = 300;
-    ref.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
-      behavior: "smooth",
-    });
-  }
+interface TestimonialItem {
+  image: string;
+  rating: number;
+  text: string;
+  name: string;
+  position?: string;
+  company?: string;
 }
 
-export default function Testimonial({ testimonials }: { testimonials: any[] }) {
+export default function Testimonial({
+  testimonials,
+}: {
+  testimonials: TestimonialItem[];
+}) {
   const { push } = useRouter();
   const testimonialUseRef = useRef<HTMLDivElement | null>(null);
 
@@ -61,7 +64,7 @@ export default function Testimonial({ testimonials }: { testimonials: any[] }) {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6 italic text-sm">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div className="border-t border-gray-400 pt-6">
                   <div className="text-gray-900 mb-1">{testimonial.name}</div>
@@ -135,7 +138,7 @@ export default function Testimonial({ testimonials }: { testimonials: any[] }) {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6 italic text-sm">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div className="border-t border-gray-400 pt-6">
                   <div className="text-gray-900 mb-1">{testimonial.name}</div>

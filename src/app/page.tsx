@@ -8,10 +8,6 @@ import {
   Award,
   Shield,
   Star,
-  Wrench,
-  Target,
-  Eye,
-  Users,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -23,13 +19,9 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import CranePrecastAsset from "@/components/images/assets/crane-precast.jpg";
 import PrecastAsset from "@/components/images/precast-background.jpg";
-// src\components\images\assets\DJI_0201.JPG
-import Link from "next/link";
-import { ScrollAnimation } from "@/components/ScrollAnimation";
 
 // Simple AnimatedNumber component
 import { useEffect, useState } from "react";
-import ClientDetail from "@/components/ClientDetail";
 import { Clients } from "@/components/Clients";
 function AnimatedNumber({ end }: { end: number }) {
   const [value, setValue] = useState(0);
