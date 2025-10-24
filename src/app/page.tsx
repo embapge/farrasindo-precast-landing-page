@@ -219,7 +219,7 @@ export default function HomePage() {
   return (
     <div className="">
       {/* Hero Section with Full Screen Image */}
-      <section className="relative h-[135vh] md:h-screen pt-20">
+      <section className="relative md:h-screen pt-25 pb-10">
         <div className="absolute inset-0">
           <ImageWithFallback
             src={`/api/image?path=/backgrounds/home-background1.jpg`}
