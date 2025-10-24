@@ -32,7 +32,7 @@ export function Footer() {
           />
           <div className="flex md:flex-row flex-col md:gap-12">
             <div className="text-white z-10 flex flex-col flex-1 gap-2 justify-center">
-              <span className="font-semibold text-orange-400 text-sm md:text-lg">
+              <span className="font-semibold text-black text-sm md:text-lg">
                 Dapatkan penawaran
               </span>
               <h2 className="mb-4 text-3xl md:text-4xl md:text-white text-gray-700">

@@ -639,7 +639,7 @@ export default function AboutPage() {
       </section>
 
       {/* Quality & Certificates */}
-      <QualityTable />
+      {/* <QualityTable /> */}
       <Certificates />
       <Clients />
     </div>

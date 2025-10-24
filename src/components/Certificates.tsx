@@ -5,36 +5,12 @@ import { Award, FileCheck, Shield, Star } from "lucide-react";
 export function Certificates() {
   const certificates = [
     {
-      icon: Award,
-      title: "ISO 9001:2015",
-      issuer: "International Organization for Standardization",
-      description: "Sistem Manajemen Mutu",
-      year: "2020-2025",
-      color: "blue",
-    },
-    {
-      icon: Shield,
-      title: "SNI Certification",
-      issuer: "Badan Standardisasi Nasional",
-      description: "Sertifikasi Produk Beton Pracetak",
-      year: "2019-2024",
-      color: "green",
-    },
-    {
       icon: FileCheck,
       title: "TKDN Certificate",
       issuer: "Kementerian Perindustrian RI",
       description: "Tingkat Komponen Dalam Negeri",
       year: "2023",
       color: "purple",
-    },
-    {
-      icon: Star,
-      title: "SMK3 Certificate",
-      issuer: "Kementerian Ketenagakerjaan RI",
-      description: "Sistem Manajemen Kesehatan dan Keselamatan Kerja",
-      year: "2021-2024",
-      color: "orange",
     },
   ];
 
@@ -72,7 +48,7 @@ export function Certificates() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="flex gap-6 mb-8">
           {certificates.map((cert, index) => {
             const colorClasses = {
               blue: "bg-blue-100 text-blue-600",
@@ -85,7 +61,7 @@ export function Certificates() {
             return (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow border-none shadow-xl cursor-pointer hover:scale-105 transition-all"
+                className="hover:shadow-lg transition-shadow border-none shadow-xl cursor-pointer hover:scale-105 transition-all mx-auto"
               >
                 <CardContent className="p-6 text-center">
                   <div

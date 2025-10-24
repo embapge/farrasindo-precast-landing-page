@@ -93,49 +93,58 @@ export default function HomePage() {
       name: "U-Ditch",
       category: "Saluran Drainase",
       description: "Saluran drainase berbentuk U untuk sistem pengairan",
-      sizes: "30x30 - 100x100 cm",
-      image:
-        "https://images.unsplash.com/photo-1603753910171-24a77f633bf3?w=400",
+      mutu: ">= K-350",
+      sizes: [
+        "300x300",
+        "300x400",
+        "300x500",
+        "400x400",
+        "400x500",
+        "400x600",
+        "500x500",
+        "500x700",
+        "600x600",
+        "600x700",
+        "600x800",
+        "800x700",
+        "800x800",
+        "800x1000",
+      ],
+      image_path: "/products/u-ditch.png",
     },
     {
       name: "Box Culvert",
       category: "Saluran Drainase",
       description: "Gorong-gorong berbentuk kotak untuk drainase",
-      sizes: "100x100 - 200x200 cm",
-      image:
-        "https://images.unsplash.com/photo-1649644625092-6a66a59cffda?w=400",
+      sizes: ["600x600", "800x800", "1000x1000", "2000x2000"],
+      mutu: ">= K-350",
+      image_path: "/products/box-culvert.png",
     },
     {
-      name: "Paving Block",
-      category: "Produk Jalan",
-      description: "Blok beton untuk perkerasan jalan dan trotoar",
-      sizes: "Berbagai motif",
-      image:
-        "https://images.unsplash.com/photo-1591180566452-88208818594b?w=400",
+      name: "Concrete Wall",
+      category: "Bangunan",
+      description:
+        "Dinding beton untuk memberikan kekuatan, daya tahan, dan stabilitas pada sebuah bangunan",
+      sizes: ["100x100", "150x150", "200x200", "300x300"],
+      mutu: ">= K-350",
+      image_path: "/products/concrete-wall-facade-h03-2k.png",
     },
     {
       name: "Road Barrier",
       category: "Produk Jalan",
       description: "Pembatas jalan untuk keamanan lalu lintas",
-      sizes: "Tipe A, B, C",
-      image:
-        "https://images.unsplash.com/photo-1716037999044-98a8e85dfa1a?w=400",
+      sizes: ["300x700x2500", "600x1000x1000"],
+      mutu: ">= K-350",
+      image_path: "/products/barrier.png",
     },
     {
-      name: "Panel Lantai",
+      name: "Panel Arsitektur",
       category: "Bangunan",
-      description: "Panel beton untuk lantai bangunan bertingkat",
-      sizes: "120x600 - 120x1000 cm",
-      image:
-        "https://images.unsplash.com/photo-1730148005805-51a70e63d2ec?w=400",
-    },
-    {
-      name: "Tiang Pancang",
-      category: "Bangunan",
-      description: "Tiang fondasi untuk bangunan",
-      sizes: "25x25 - 40x40 cm",
-      image:
-        "https://images.unsplash.com/photo-1583169828149-5973ebae36f5?w=400",
+      description:
+        "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
+      sizes: ["50x100", "75x150", "100x200", "150x300"],
+      mutu: ">= K-350",
+      image_path: "/products/architectural-elements.h03-2k.png",
     },
   ];
 
@@ -199,20 +208,6 @@ export default function HomePage() {
 
   const certificates = [
     {
-      icon: Award,
-      title: "ISO 9001:2015",
-      issuer: "International Organization for Standardization",
-      description: "Sistem Manajemen Mutu",
-      color: "yellow",
-    },
-    {
-      icon: Shield,
-      title: "SNI Certification",
-      issuer: "Badan Standardisasi Nasional",
-      description: "Sertifikasi Produk Beton Pracetak",
-      color: "orange",
-    },
-    {
       icon: Star,
       title: "TKDN Certificate",
       issuer: "Kementerian Perindustrian RI",
@@ -227,7 +222,7 @@ export default function HomePage() {
       <section className="relative h-[135vh] md:h-screen pt-20">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1583169828149-5973ebae36f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVjYXN0JTIwY29uY3JldGUlMjBmYWN0b3J5fGVufDF8fHx8MTc2MDA4MDI0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src={`/api/image?path=/backgrounds/home-background1.jpg`}
             alt="Farracon Precast Factory"
             className="w-full h-full object-cover"
           />
@@ -377,7 +372,9 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all cursor-pointer">
                 <Image
-                  src={CranePrecastAsset}
+                  src={`/api/image?path=/backgrounds/home-background1.jpg`}
+                  width={750}
+                  height={750}
                   alt="Crane Precast"
                   className="object-cover"
                 />
@@ -425,28 +422,33 @@ export default function HomePage() {
                 key={index}
                 className="flex-shrink-0 w-80 hover:shadow-xl transition-shadow snap-start border-gray-500/20"
               >
-                <div className="relative h-60 overflow-hidden rounded-t-lg">
-                  <ImageWithFallback
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative h-80 overflow-hidden rounded-t-lg">
+                  <div className="w-full h-full flex items-center justify-center">
+                    <Image
+                      src={`/api/image?path=${product.image_path}`}
+                      width={200}
+                      height={200}
+                      alt="U Ditch"
+                      className="z-1 cursor-pointer hover:scale-120 transition-all"
+                    />
+                    <div className="absolute bg-orange-500/80 h-40 w-40 rounded-full blur-2xl"></div>
+                  </div>
                   <div className="absolute bottom-0 w-full">
                     <div className="w-full flex justify-between p-3">
                       <Badge className="backdrop-blur-sm bg-orange-500/20 border border-orange-500/50">
-                        <span className="font-semibold opacity-100 text-white/90 text-sm">
+                        <span className="font-semibold opacity-100 text-orange-500/70 text-sm">
                           {product.category}
                         </span>
                       </Badge>
                       <Badge className="bg-white-500/0 border border-orange-500/50">
                         <span className="font-semibold opacity-100 text-orange-300 text-sm">
-                          K-300
+                          {product.mutu}
                         </span>
                       </Badge>
                     </div>
                   </div>
                 </div>
-                <CardContent className="">
+                <CardContent className="flex flex-col">
                   <h3 className="mb-2 text-gray-900">{product.name}</h3>
                   <p className="text-gray-600 mb-4 text-sm">
                     {product.description}
@@ -456,21 +458,14 @@ export default function HomePage() {
                       Ukuran Tersedia:
                     </span>
                     <div className="w-full flex flex-wrap gap-2">
-                      <span className="bg-gray-100 rounded-full text-gray-800 text-xs font-semibold py-1 px-2 rounded">
-                        30x30x120
-                      </span>
-                      <span className="bg-gray-100 rounded-full text-gray-800 text-xs font-semibold py-1 px-2 rounded">
-                        30x30x120
-                      </span>
-                      <span className="bg-gray-100 rounded-full text-gray-800 text-xs font-semibold py-1 px-2 rounded">
-                        30x30x120
-                      </span>
-                      <span className="bg-gray-100 rounded-full text-gray-800 text-xs font-semibold py-1 px-2 rounded">
-                        30x30x120
-                      </span>
-                      <span className="bg-gray-100 rounded-full text-gray-800 text-xs font-semibold py-1 px-2 rounded">
-                        30x30x120
-                      </span>
+                      {product.sizes.map((size, idx) => (
+                        <span
+                          className="bg-gray-100 rounded-full text-gray-800 text-xs font-semibold py-1 px-2 rounded"
+                          key={idx}
+                        >
+                          {size}
+                        </span>
+                      ))}
                     </div>
                   </div>
                   <div className="flex flex-col">
@@ -493,14 +488,8 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="rounded-md border border-gray-200 my-3"></div>
-                  <div className="flex justify-center items-center flex-wrap gap-3">
-                    <div className="flex flex-col">
-                      <span className="text-sm text-gray-500">Harga Mulai</span>
-                      <span className="text-lg text-orange-500">
-                        Rp 150.000 - 850.000
-                      </span>
-                    </div>
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded cursor-pointer text-sm flex items-center">
+                  <div className="flex flex-col gap-1 items-center justify-center">
+                    <button className="bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded cursor-pointer text-sm flex items-center w-[150px] text-center justify-center hover:scale-105 transition-all">
                       Hubungi Sales
                     </button>
                   </div>
@@ -591,7 +580,7 @@ export default function HomePage() {
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
-        <div className="z-10 w-full relative py-12 px-6">
+        <div className="z-10 w-full relative py-12 px-6 min-h-[700px] md:min-h-[500px] flex flex-col justify-between">
           <Image
             src={PrecastAsset}
             fill={true}
@@ -599,13 +588,15 @@ export default function HomePage() {
             className="object-cover absolute inset-0 z-0 w-full"
           />
           <div className="text-center mb-12 text-white z-10 relative">
-            <h2 className="mb-4 text-4xl">Mengapa Memilih Farracon Precast?</h2>
+            <h2 className="mb-20 md:mb-4 text-4xl">
+              Mengapa Memilih Farracon Precast?
+            </h2>
             <p className="text-orange-200 max-w-3xl mx-auto text-lg">
               Komitmen kami terhadap kualitas dan kepuasan pelanggan
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer hover:scale-105 h-[150px] flex items-center justify-center">
               <CardContent className="p-6 text-center">
                 <div className="text-4xl mb-2">98%</div>
@@ -630,7 +621,7 @@ export default function HomePage() {
                 <p className="text-orange-100">Customer Support</p>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
 
           <div className="text-center mt-12 relative">
             <Button
@@ -661,7 +652,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="flex gap-8 max-w-5xl mx-auto w-full">
             {certificates.map((cert, index) => {
               const colorClasses = {
                 yellow: "bg-yellow-500",
@@ -671,7 +662,7 @@ export default function HomePage() {
               return (
                 <Card
                   key={index}
-                  className={`hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 overflow-hidden border-orange-500 cursor-pointer ${
+                  className={`hover:shadow-2xl transition-all transform hover:-translate-y-2 duration-300 overflow-hidden border-orange-500 cursor-pointer mx-auto ${
                     colorClasses[cert.color as keyof typeof colorClasses]
                   }`}
                 >
@@ -701,7 +692,7 @@ export default function HomePage() {
       </section>
 
       {/* Quality Table Section */}
-      <QualityTable />
+      {/* <QualityTable /> */}
 
       {/* Testimonials Section */}
       <Clients />

@@ -23,135 +23,106 @@ export default function ProductsPage() {
   const allProducts = [
     // Saluran Drainase
     {
-      category: "Saluran Drainase",
       name: "U-Ditch",
-      description:
-        "Saluran drainase berbentuk U untuk sistem pengairan dan drainase",
+      category: "Saluran Drainase",
+      description: "Saluran drainase berbentuk U untuk sistem pengairan",
+      mutu: ">= K-350",
       sizes: [
-        "30x30x120",
-        "40x40x120",
-        "50x50x120",
-        "60x60x120",
-        "80x80x120",
-        "100x100x120",
+        "300x300",
+        "300x400",
+        "300x500",
+        "400x400",
+        "400x500",
+        "400x600",
+        "500x500",
+        "500x700",
+        "600x600",
+        "600x700",
+        "600x800",
+        "800x700",
+        "800x800",
+        "800x1000",
       ],
-      mutu: "K-300",
-      applications: ["Saluran air", "Drainase jalan", "Irigasi"],
-      price: "Rp 150.000 - 850.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
+      image_path: "/products/u-ditch.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
-      category: "Saluran Drainase",
-      name: "Cover U-Ditch",
-      description: "Penutup untuk U-Ditch dengan berbagai pilihan beban",
-      sizes: ["30x120", "40x120", "50x120", "60x120", "80x120", "100x120"],
-      mutu: "K-350",
-      applications: ["Penutup saluran", "Jalan kendaraan", "Area pejalan kaki"],
-      price: "Rp 85.000 - 450.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
-    },
-    {
-      category: "Saluran Drainase",
       name: "Box Culvert",
+      category: "Saluran Drainase",
+      description: "Gorong-gorong berbentuk kotak untuk drainase",
+      sizes: ["600x600", "800x800", "1000x1000", "2000x2000"],
+      mutu: ">= K-350",
+      image_path: "/products/box-culvert.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
+    },
+    {
+      name: "Concrete Wall",
+      category: "Bangunan",
       description:
-        "Saluran air berbentuk kotak untuk drainase dan gorong-gorong",
-      sizes: ["100x100x100", "120x120x100", "150x150x100", "200x200x100"],
-      mutu: "K-400",
-      applications: ["Gorong-gorong", "Saluran bawah tanah", "Terowongan air"],
-      price: "Rp 1.200.000 - 4.500.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
+        "Dinding beton untuk memberikan kekuatan, daya tahan, dan stabilitas pada sebuah bangunan",
+      sizes: ["100x100", "150x150", "200x200", "300x300"],
+      mutu: ">= K-350",
+      image_path: "/products/concrete-wall-facade-h03-2k.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
-      category: "Saluran Drainase",
-      name: "Manhole",
-      description: "Lubang inspeksi untuk sistem drainase dan utilitas",
-      sizes: ["Ø80", "Ø100", "Ø120", "Ø150"],
-      mutu: "K-400",
-      applications: ["Sistem drainase", "Jaringan kabel", "Utilitas"],
-      price: "Rp 850.000 - 2.100.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
-    },
-    {
-      category: "Saluran Drainase",
-      name: "Buis Beton",
-      description: "Pipa beton untuk gorong-gorong dan saluran air",
-      sizes: ["Ø30", "Ø40", "Ø60", "Ø80", "Ø100"],
-      mutu: "K-300",
-      applications: ["Gorong-gorong", "Saluran air", "Drainase"],
-      price: "Rp 65.000 - 450.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
-    },
-    // Produk Jalan
-    {
-      category: "Produk Jalan",
-      name: "Paving Block",
-      description: "Blok beton untuk perkerasan jalan dan area pejalan kaki",
-      sizes: ["Uni-grass", "Segi enam", "Trihex", "Persegi panjang"],
-      mutu: "K-175",
-      applications: ["Trotoar", "Parkir", "Taman"],
-      price: "Rp 45.000 - 95.000/m²",
-      image: "/api/image?path=logos/farrasindo-group.png",
-    },
-    {
-      category: "Produk Jalan",
       name: "Road Barrier",
-      description: "Pembatas jalan untuk keamanan dan pengaturan lalu lintas",
-      sizes: ["Tipe A (80cm)", "Tipe B (100cm)", "Tipe C (120cm)"],
-      mutu: "K-350",
-      applications: ["Pembatas jalan", "Median", "Pengaman"],
-      price: "Rp 350.000 - 650.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
-    },
-    {
       category: "Produk Jalan",
-      name: "Kanstin",
-      description: "Pembatas tepi jalan dan trotoar",
-      sizes: ["20x30x60", "25x40x60", "30x50x60"],
-      mutu: "K-225",
-      applications: ["Tepi jalan", "Trotoar", "Taman"],
-      price: "Rp 35.000 - 75.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
+      description: "Pembatas jalan untuk keamanan lalu lintas",
+      sizes: ["300x700x2500", "600x1000x1000"],
+      mutu: ">= K-350",
+      image_path: "/products/barrier.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
-      category: "Produk Jalan",
-      name: "Grass Block",
-      description: "Blok beton berongga untuk area hijau",
-      sizes: ["60x40x8", "60x40x10"],
-      mutu: "K-225",
-      applications: ["Parkir hijau", "Taman", "Area resapan"],
-      price: "Rp 55.000 - 85.000/m²",
-      image: "/api/image?path=logos/farrasindo-group.png",
-    },
-    // Bangunan
-    {
+      name: "Panel Arsitektur",
       category: "Bangunan",
-      name: "Panel Lantai",
-      description: "Panel beton untuk lantai bangunan bertingkat",
-      sizes: ["120x600", "120x800", "120x1000"],
-      mutu: "K-500",
-      applications: ["Lantai gedung", "Bangunan industri", "Ruko"],
-      price: "Rp 450.000 - 850.000",
-      image: "/api/image?path=logos/farrasindo-group.png",
+      description:
+        "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
+      sizes: ["50x100", "75x150", "100x200", "150x300"],
+      mutu: ">= K-350",
+      image_path: "/products/architectural-elements.h03-2k.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
+      name: "Cynder Block",
       category: "Bangunan",
-      name: "Tiang Pancang",
-      description: "Tiang fondasi untuk bangunan",
-      sizes: ["25x25", "30x30", "35x35", "40x40"],
-      mutu: "K-500",
-      applications: ["Fondasi gedung", "Jembatan", "Dermaga"],
-      price: "Rp 350.000 - 750.000/m",
-      image: "/api/image?path=logos/farrasindo-group.png",
+      description:
+        "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
+      sizes: ["50x100", "75x150", "100x200", "150x300"],
+      mutu: ">= K-350",
+      image_path: "/products/cynder-block-h03-2k.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
+      name: "Concrete Facade",
       category: "Bangunan",
-      name: "Balok Girder",
-      description: "Balok beton prategang untuk struktur jembatan",
-      sizes: ["40x60", "50x80", "60x100"],
-      mutu: "K-500",
-      applications: ["Jembatan", "Flyover", "Struktur bentang"],
-      price: "Hubungi Sales",
-      image: "/api/image?path=logos/farrasindo-group.png",
+      description:
+        "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
+      sizes: ["50x100", "75x150", "100x200", "150x300"],
+      mutu: ">= K-350",
+      image_path: "/products/concrete-facade-h03-2k.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
+    },
+    {
+      name: "Concrete Slabs",
+      category: "Bangunan",
+      description:
+        "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
+      sizes: ["50x100", "75x150", "100x200", "150x300"],
+      mutu: ">= K-350",
+      image_path: "/products/concrete-slabs-on-wood-planks-h03-2k.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
+    },
+    {
+      name: "Concrete Wall",
+      category: "Bangunan",
+      description:
+        "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
+      sizes: ["50x100", "75x150", "100x200", "150x300"],
+      mutu: ">= K-350",
+      image_path: "/products/concrete-wall-h03-2k.png",
+      applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
   ];
 
@@ -274,13 +245,16 @@ export default function ProductsPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="h-[200px] w-full mb-4 rounded-md relative">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill={true}
-                      className="object-contain"
-                    />
+                  <div className="h-[300px] w-full mb-4 rounded-md relative">
+                    <div className="relative h-full overflow-hidden rounded-t-lg flex items-center justify-center">
+                      <Image
+                        src={`/api/image?path=${product.image_path}`}
+                        alt={product.name}
+                        fill={true}
+                        className="object-contain cursor-pointer hover:scale-115 transition-all z-1"
+                      />
+                      <div className="absolute bg-orange-500/100 h-40 w-40 rounded-full blur-2xl"></div>
+                    </div>
                   </div>
                   <p className="text-gray-600 mb-4">{product.description}</p>
 
@@ -313,11 +287,7 @@ export default function ProductsPage() {
                   </div>
 
                   <div className="pt-4 border-t">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <div className="text-sm text-gray-500">Harga mulai</div>
-                        <div className="text-orange-600">{product.price}</div>
-                      </div>
+                    <div className="flex justify-center items-center">
                       <Button className="bg-orange-600 hover:bg-orange-700">
                         Hubungi Sales
                       </Button>
