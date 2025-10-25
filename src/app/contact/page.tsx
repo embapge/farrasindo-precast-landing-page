@@ -9,7 +9,7 @@ export default function ContactPage() {
       <section className="relative h-[88vh] min-h-[400px] pt-20">
         <div className="absolute inset-0">
           <ImageWithFallback
-            src="https://images.unsplash.com/photo-1583169828149-5973ebae36f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcmVjYXN0JTIwY29uY3JldGUlMjBmYWN0b3J5fGVufDF8fHx8MTc2MDA4MDI0NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            src="/api/image?path=/precast-background(3).jpg"
             alt="Contact Us"
             className="w-full h-full object-cover"
           />
