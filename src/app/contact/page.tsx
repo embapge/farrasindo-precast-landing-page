@@ -41,12 +41,12 @@ export default function ContactPage() {
             <div className="text-center">
               <Phone className="mx-auto mb-2" size={24} />
               <p className="text-sm text-orange-100">Telepon</p>
-              <p>+62 21 1234 5678</p>
+              <p>+62 8157 5453 564</p>
             </div>
             <div className="text-center">
               <Mail className="mx-auto mb-2" size={24} />
               <p className="text-sm text-orange-100">Email</p>
-              <p>info@farraconprecast.co.id</p>
+              <p>marketing@farrasindo-cp.co.id</p>
             </div>
             <div className="text-center">
               <MapPin className="mx-auto mb-2" size={24} />

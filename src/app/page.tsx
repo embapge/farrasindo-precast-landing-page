@@ -510,7 +510,7 @@ export default function HomePage() {
       </section>
 
       {/* Portofolio Overview */}
-      <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-4">
             <div className="text-center w-full">
@@ -576,7 +576,7 @@ export default function HomePage() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">

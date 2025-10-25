@@ -225,8 +225,36 @@ export default function PortofolioPage() {
         </div>
       </section>
 
+      <section className="py-4 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <Card className="border-dashed border-2 border-gray-300 p-6 text-center">
+            <CardContent>
+              <h3 className="text-2xl font-semibold mb-2">
+                Halaman Sedang Diperbarui
+              </h3>
+              <p className="text-gray-600 mb-4">
+                Kami sedang memperbarui halaman portofolio untuk menampilkan
+                proyek terbaru dan detail lengkap. Mohon cek kembali dalam
+                beberapa saat.
+              </p>
+              <p className="text-gray-500 mb-6">
+                Butuh informasi segera? Silakan hubungi tim kami.
+              </p>
+              <div className="flex justify-center">
+                <Button
+                  className="bg-orange-600 hover:bg-orange-700 hover:scale-105 transition-all cursor-pointer"
+                  onClick={() => push("contact")}
+                >
+                  Hubungi Kami
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Projects Grid */}
-      <section className="py-12">
+      {/* <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, index) => (
@@ -300,7 +328,7 @@ export default function PortofolioPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-12 bg-white">

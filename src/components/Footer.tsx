@@ -227,20 +227,17 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="flex-shrink-0 mt-1" size={18} />
                 <span className="text-sm">
-                  Jl. Industri Raya No. 123
-                  <br />
-                  Kawasan Industri MM2100
-                  <br />
-                  Bekasi, Jawa Barat
+                  PT. Farracon Precast Industri - Sanja, Kec. Citeureup,
+                  Kabupaten Bogor, Jawa Barat
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="flex-shrink-0" size={18} />
-                <span className="text-sm">+62 21 1234 5678</span>
+                <span className="text-sm">+62 8157 5453 564</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="flex-shrink-0" size={18} />
-                <span className="text-sm">info@farraconprecast.co.id</span>
+                <span className="text-sm">marketing@farrasindo-cp.co.id</span>
               </li>
             </ul>
           </div>

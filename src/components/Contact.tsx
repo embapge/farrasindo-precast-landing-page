@@ -37,21 +37,20 @@ export function Contact() {
     {
       icon: Phone,
       title: "Telepon",
-      details: ["+62 21 1234 5678", "+62 812 3456 7890 (WhatsApp)"],
+      details: ["+62 8157 5453 564 (WhatsApp)"],
       color: "blue",
     },
     {
       icon: Mail,
       title: "Email",
-      details: ["info@farraconprecast.co.id", "sales@farraconprecast.co.id"],
+      details: ["marketing@farrasindo-cp.co.id"],
       color: "green",
     },
     {
       icon: MapPin,
       title: "Alamat",
       details: [
-        "Jl. Industri Raya No. 123",
-        "Kawasan Industri MM2100, Bekasi, Jawa Barat",
+        "PT. Farracon Precast Industri - Sanja, Kec. Citeureup, Kabupaten Bogor, Jawa Barat",
       ],
       color: "purple",
     },
@@ -222,7 +221,7 @@ export function Contact() {
                 </p>
                 <div className="space-y-3">
                   <a
-                    href="https://wa.me/6281234567890"
+                    href="https://wa.me/+6281575453564"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block bg-white text-orange-600 px-6 py-3 rounded-lg text-center hover:bg-orange-50 transition-colors"
@@ -230,7 +229,7 @@ export function Contact() {
                     WhatsApp Sales Team
                   </a>
                   <a
-                    href="tel:+622112345678"
+                    href="tel:+6281575453564"
                     className="block bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg text-center hover:bg-white/20 transition-colors"
                   >
                     Telepon Langsung

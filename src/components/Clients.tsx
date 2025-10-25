@@ -44,7 +44,8 @@ export function Clients() {
     {
       name: "Ir. Bambang Suryanto",
       position: "Project Manager",
-      company: "PT Wijaya Karya",
+      // company: "PT Wijaya Karya",
+      company: "",
       text: "Farracon Precast memberikan kualitas produk yang konsisten dan pengiriman yang selalu tepat waktu. Sangat membantu kelancaran proyek kami.",
       rating: 5,
       image: "https://i.pravatar.cc/150?u=ahmad",
@@ -52,7 +53,8 @@ export function Clients() {
     {
       name: "Drs. Ahmad Hidayat",
       position: "Site Manager",
-      company: "PT Adhi Karya",
+      // company: "PT Adhi Karya",
+      company: "",
       text: "Produk U-Ditch dari Farracon Precast memiliki kualitas yang sangat baik dengan harga yang kompetitif. Rekomendasikan untuk proyek infrastruktur.",
       rating: 5,
       image: "https://i.pravatar.cc/150?u=bambang",
@@ -60,7 +62,8 @@ export function Clients() {
     {
       name: "Eng. Siti Nurhaliza, ST",
       position: "Chief Engineer",
-      company: "Agung Podomoro Land",
+      // company: "Agung Podomoro Land",
+      company: "",
       text: "Pelayanan yang profesional dan produk berkualitas tinggi. Tim Farracon Precast sangat responsif terhadap kebutuhan custom produk kami.",
       rating: 5,
       image: "https://i.pravatar.cc/150?u=sdfd",
