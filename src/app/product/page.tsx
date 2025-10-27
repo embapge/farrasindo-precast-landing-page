@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Search, Filter } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -129,12 +130,12 @@ export default function ProductsPage() {
   const categories = ["all", "Saluran Drainase", "Produk Jalan", "Bangunan"];
   const mutuOptions = [
     "all",
-    "K-175",
-    "K-225",
-    "K-300",
-    "K-350",
-    "K-400",
-    "K-500",
+    ">= K-175",
+    ">= K-225",
+    ">= K-300",
+    ">= K-350",
+    ">= K-400",
+    ">= K-500",
   ];
 
   const filteredProducts = allProducts.filter((product) => {
@@ -288,9 +289,12 @@ export default function ProductsPage() {
 
                   <div className="pt-4 border-t">
                     <div className="flex justify-center items-center">
-                      <Button className="bg-orange-600 hover:bg-orange-700">
+                      <Link
+                        href={`/contact`}
+                        className="bg-orange-600 text-sm hover:bg-orange-700 text-white py-2 px-4 rounded-md font-medium cursor-pointer hover:scale-105 transition-all"
+                      >
                         Hubungi Sales
-                      </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
@@ -336,9 +340,12 @@ export default function ProductsPage() {
                 Kami menerima pesanan custom sesuai spesifikasi proyek Anda.
                 Hubungi tim sales kami untuk konsultasi dan penawaran khusus.
               </p>
-              <Button className="bg-white text-orange-600 hover:bg-orange-50">
+              <Link
+                href={`/contact`}
+                className="bg-white text-orange-600 hover:bg-orange-50 py-3 px-4 rounded-md font-medium cursor-pointer hover:scale-105 transition-all"
+              >
                 Konsultasi Custom Order
-              </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

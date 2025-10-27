@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Calendar, Building2, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function PortofolioPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -341,9 +342,12 @@ export default function PortofolioPage() {
                 proyek mereka kepada Farracon Precast. Konsultasikan kebutuhan
                 proyek Anda dengan tim ahli kami.
               </p>
-              <Button className="bg-orange-600 hover:bg-orange-700" size="lg">
+              <Link
+                href={`contact`}
+                className="bg-orange-600 hover:bg-orange-700 py-3 px-4 rounded-md"
+              >
                 Mulai Proyek Anda
-              </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

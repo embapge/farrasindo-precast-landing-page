@@ -15,6 +15,7 @@ import PrecastAsset from "@/components/images/precast-background.jpg";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -81,14 +82,14 @@ export function Footer() {
                 </Card>
               </div>
               <div className="text-center relative mt-5">
-                <Button
-                  size="lg"
-                  className="backdrop-blur-sm bg-orange-500/30 hover:bg-orange-500/30 text-white text-md px-8 py-5 hover:scale-105 transition-all cursor-pointer border border-orange-500"
-                  onClick={() => push("about")}
+                <Link
+                  href={`https://wa.me/6281575453564?message=Halo%20Farracon%20Precast,%20saya%20ingin%20mendapatkan%20penawaran%20untuk%20proyek%20saya.`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="backdrop-blur-sm bg-orange-500/30 hover:bg-orange-500/30 text-white text-md px-8 py-4 hover:scale-105 transition-all cursor-pointer border border-orange-500 rounded-lg "
                 >
-                  <span>Dapatkan Penawaran</span>
-                  {/* <ArrowRight className="ml-2" size={24} /> */}
-                </Button>
+                  Dapatkan penawaran
+                </Link>
               </div>
             </div>
           </div>
@@ -170,7 +171,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => push("products")}
+                  onClick={() => push("product")}
                   className="hover:text-orange-400 transition-colors"
                 >
                   Produk
@@ -233,11 +234,22 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="flex-shrink-0" size={18} />
-                <span className="text-sm">+62 8157 5453 564</span>
+                <Link
+                  href={`tel:081575453564`}
+                  className="hover:text-orange-500"
+                >
+                  <span className="text-sm">+62 8157 5453 564</span>
+                </Link>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="flex-shrink-0" size={18} />
-                <span className="text-sm">marketing@farrasindo-cp.co.id</span>
+                <Link
+                  href={`mailto:marketing@farrasindo-cp.co.id`}
+                  target="__blank"
+                  className="hover:text-orange-500"
+                >
+                  <span className="text-sm">marketing@farrasindo-cp.co.id</span>
+                </Link>
               </li>
             </ul>
           </div>

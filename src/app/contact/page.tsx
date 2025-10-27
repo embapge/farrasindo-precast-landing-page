@@ -1,6 +1,12 @@
 import { Contact } from "@/components/Contact";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "PT. Farracon Precast Industri",
+  description: "Perusahaan penyedia solusi beton pracetak berkualitas tinggi.",
+};
 
 export default function ContactPage() {
   return (
@@ -51,7 +57,7 @@ export default function ContactPage() {
             <div className="text-center">
               <MapPin className="mx-auto mb-2" size={24} />
               <p className="text-sm text-orange-100">Lokasi</p>
-              <p>Bekasi, Jawa Barat</p>
+              <p>Citereup, Jawa Barat</p>
             </div>
             <div className="text-center">
               <Clock className="mx-auto mb-2" size={24} />

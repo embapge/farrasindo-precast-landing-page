@@ -155,7 +155,7 @@ export default function Testimonial({
         </div>
         <div className="text-center mt-3">
           <button
-            onClick={() => push("products")}
+            onClick={() => push("product")}
             className="border-orange-600 text-orange-600 hover:bg-orange-50 inline-flex items-center cursor-pointer hover:scale-105 transition-all font-semibold"
           >
             Lihat Semua Produk
