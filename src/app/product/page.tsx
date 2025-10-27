@@ -254,7 +254,7 @@ export default function ProductsPage() {
                         fill={true}
                         className="object-contain cursor-pointer hover:scale-115 transition-all z-1"
                       />
-                      <div className="absolute bg-orange-500/100 h-40 w-40 rounded-full blur-2xl"></div>
+                      {/* <div className="absolute bg-orange-500/100 h-40 w-40 rounded-full blur-2xl"></div> */}
                     </div>
                   </div>
                   <p className="text-gray-600 mb-4">{product.description}</p>
@@ -333,7 +333,7 @@ export default function ProductsPage() {
       {/* Custom Order CTA */}
       <section className="py-12 bg-white">
         <div className="container mx-auto ">
-          <Card className="rounded-none bg-gradient-to-r from-orange-600 to-yellow-600 text-white">
+          <Card className="rounded-none bg-orange-600 text-white">
             <CardContent className="p-8 text-center">
               <h3 className="mb-4">Butuh Ukuran Custom?</h3>
               <p className="text-orange-100 mb-6 max-w-2xl mx-auto">

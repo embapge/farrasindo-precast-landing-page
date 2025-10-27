@@ -29,11 +29,11 @@ export function Footer() {
             src={PrecastAsset}
             fill={true}
             alt="Precast Background"
-            className="object-cover absolute inset-0 z-0 w-full rounded-lg opacity-40"
+            className="object-cover absolute inset-0 z-0 w-full rounded-lg bg-gray-800"
           />
           <div className="flex md:flex-row flex-col md:gap-12">
             <div className="text-white z-10 flex flex-col flex-1 gap-2 justify-center">
-              <span className="font-semibold text-black text-sm md:text-lg">
+              <span className="font-semibold text-white text-sm md:text-lg">
                 Dapatkan penawaran
               </span>
               <h2 className="mb-4 text-3xl md:text-4xl md:text-white text-gray-700">

@@ -431,7 +431,7 @@ export default function HomePage() {
                       alt="U Ditch"
                       className="z-1 cursor-pointer hover:scale-120 transition-all"
                     />
-                    <div className="absolute bg-orange-500/80 h-40 w-40 rounded-full blur-2xl"></div>
+                    {/* <div className="absolute bg-orange-500/80 h-40 w-40 rounded-full blur-2xl"></div> */}
                   </div>
                   <div className="absolute bottom-0 w-full">
                     <div className="w-full flex justify-between p-3">
