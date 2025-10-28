@@ -9,6 +9,7 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
 
 export function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,11 +18,34 @@ export function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock form submission
-    toast.success("Terima kasih! Tim kami akan segera menghubungi Anda.");
-    setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (res.ok) {
+        toast.success("Terima kasih! Tim kami akan segera menghubungi Anda.");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          message: "",
+        });
+      } else {
+        const data = await res.json();
+        toast.error(data.error || "Gagal mengirim pesan.");
+        console.log(data);
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error("Gagal mengirim pesan.");
+    }
+    setIsSubmitting(false);
   };
 
   const handleChange = (
@@ -161,11 +185,22 @@ export function Contact() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-orange-400 hover:bg-orange-500"
+                    className={`w-full bg-orange-400 hover:bg-orange-500 ${
+                      isSubmitting
+                        ? "opacity-50 cursor-not-allowed animate-pulse"
+                        : ""
+                    }`}
+                    disabled={isSubmitting}
                   >
-                    <Send className="mr-2" size={18} />
-                    Kirim Pesan
+                    <div className="flex">
+                      <Send className="mr-2" size={18} />
+                      Kirim Pesan
+                    </div>
                   </Button>
+
+                  {isSubmitting && (
+                    <span>Sedang proses pengiriman pesan, mohon tunggu...</span>
+                  )}
                 </form>
               </CardContent>
             </Card>
