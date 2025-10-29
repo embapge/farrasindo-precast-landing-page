@@ -246,7 +246,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   className="backdrop-blur-sm bg-orange-500/50 hover:bg-orange-500/50 text-white text-lg px-8 py-6 hover:scale-105 transition-all cursor-pointer border border-orange-500 "
-                  onClick={() => push("products")}
+                  onClick={() => push("product")}
                 >
                   <span>Lihat Produk Kami</span>
                   <ArrowRight className="ml-2" size={24} />
