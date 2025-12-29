@@ -8,8 +8,10 @@ const nextConfig: NextConfig = {
         hostname: "i.pravatar.cc",
       },
     ],
+    unoptimized: true,
   },
-  output: "standalone",
+  output: "export",
+  // output: "standalone",
 };
 
 export default nextConfig;

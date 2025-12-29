@@ -8,13 +8,11 @@ import {
   Phone,
   MapPin,
   Youtube,
-  ArrowRight,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import PrecastAsset from "@/components/images/precast-background.jpg";
 import Image from "next/image";
 import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
 import Link from "next/link";
 
 export function Footer() {

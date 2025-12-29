@@ -1,6 +1,6 @@
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Award, FileCheck, Shield, Star } from "lucide-react";
+import { FileCheck } from "lucide-react";
 
 export function Certificates() {
   const certificates = [

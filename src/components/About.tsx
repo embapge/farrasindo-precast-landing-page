@@ -1,7 +1,5 @@
 import { Target, Eye, Award, Users } from "lucide-react";
 import { Card, CardContent } from "./ui/card";
-import FarraconAssets from "@/components/images/precast-background(1).jpg";
-import Image from "next/image";
 
 export function About() {
   const values = [

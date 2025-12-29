@@ -1,21 +1,35 @@
 import Image from "next/image";
+import AstraLogo from "@/components/images/clients/acset-astra-logo.png";
+import AdhiAPGLogo from "@/components/images/clients/adhi-apg-logo.png";
+import GnpLogo from "@/components/images/clients/gnp-logo.png";
+import GreenPramukaLogo from "@/components/images/clients/green-pramuka-logo.png";
+import IbisLogo from "@/components/images/clients/ibis-hotel-logo.png";
+import PertaminaLogo from "@/components/images/clients/pertamina-logo.png";
+import PuprLogo from "@/components/images/clients/pupr-logo.png";
+import RocketJayaLogo from "@/components/images/clients/roket-jaya-abadi-logo.png";
+import SerpongGardenLogo from "@/components/images/clients/serpong-garden-logo.png";
+import SkyHouseLogo from "@/components/images/clients/sky-house-bsd-logo.png";
+import SpringHillLogo from "@/components/images/clients/spring-hill-terrace-logo.jpg";
+import SunterLogo from "@/components/images/clients/sunter-icon-logo.jpg";
+import TmiiLogo from "@/components/images/clients/tmii-logo.png";
+import TransparkBintaroLogo from "@/components/images/clients/transpark-bintaro-logo.png";
 
 export default function ClientDetail() {
   const images = [
-    "/clients/acset-astra-logo.png",
-    "/clients/adhi-apg-logo.png",
-    "/clients/gnp-logo.png",
-    "/clients/green-pramuka-logo.png",
-    "/clients/ibis-hotel-logo.png",
-    "/clients/pertamina-logo.png",
-    "/clients/pupr-logo.png",
-    "/clients/roket-jaya-abadi-logo.png",
-    "/clients/serpong-garden-logo.png",
-    "/clients/sky-house-bsd-logo.png",
-    "/clients/spring-hill-terrace-logo.jpg",
-    "/clients/sunter-icon-logo.jpg",
-    "/clients/tmii-logo.png",
-    "/clients/transpark-bintaro-logo.png",
+    AstraLogo,
+    AdhiAPGLogo,
+    GnpLogo,
+    GreenPramukaLogo,
+    IbisLogo,
+    PertaminaLogo,
+    PuprLogo,
+    RocketJayaLogo,
+    SerpongGardenLogo,
+    SkyHouseLogo,
+    SpringHillLogo,
+    SunterLogo,
+    TmiiLogo,
+    TransparkBintaroLogo,
   ];
   return (
     <>
@@ -34,7 +48,7 @@ export default function ClientDetail() {
       <div className="flex flex-wrap justify-center mb-40 gap-5 md:max-w-[60vw] mx-auto">
         {images.map((img, idx) => (
           <Image
-            src={`/api/image?path=${img}`}
+            src={img}
             alt={`Client ${idx + 1}`}
             className="hover:scale-120 transition-all cursor-pointer object-contain"
             width={120}

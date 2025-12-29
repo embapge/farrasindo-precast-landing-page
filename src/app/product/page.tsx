@@ -15,6 +15,15 @@ import {
 import { Search, Filter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import UDitch from "@/components/images/products/u-ditch.png";
+import BoxCulvert from "@/components/images/products/box-culvert.png";
+import WallFacadeH32K from "@/components/images/products/concrete-wall-facade-h03-2k.png";
+import Barrier from "@/components/images/products/barrier.png";
+import ArchElemtH32K from "@/components/images/products/architectural-elements.h03-2k.png";
+import CynderBlockH32K from "@/components/images/products/cynder-block-h03-2k.png";
+import ConcreteFacadeH32K from "@/components/images/products/concrete-facade-h03-2k.png";
+import SlabWoodPlankH32K from "@/components/images/products/concrete-slabs-on-wood-planks-h03-2k.png";
+import ConcreteWall from "@/components/images/products/concrete-wall-h03-2k.png";
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -44,7 +53,7 @@ export default function ProductsPage() {
         "800x800",
         "800x1000",
       ],
-      image_path: "/products/u-ditch.png",
+      image: UDitch,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -53,7 +62,7 @@ export default function ProductsPage() {
       description: "Gorong-gorong berbentuk kotak untuk drainase",
       sizes: ["600x600", "800x800", "1000x1000", "2000x2000"],
       mutu: ">= K-350",
-      image_path: "/products/box-culvert.png",
+      image: BoxCulvert,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -63,7 +72,7 @@ export default function ProductsPage() {
         "Dinding beton untuk memberikan kekuatan, daya tahan, dan stabilitas pada sebuah bangunan",
       sizes: ["100x100", "150x150", "200x200", "300x300"],
       mutu: ">= K-350",
-      image_path: "/products/concrete-wall-facade-h03-2k.png",
+      image: WallFacadeH32K,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -72,7 +81,7 @@ export default function ProductsPage() {
       description: "Pembatas jalan untuk keamanan lalu lintas",
       sizes: ["300x700x2500", "600x1000x1000"],
       mutu: ">= K-350",
-      image_path: "/products/barrier.png",
+      image: Barrier,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -82,7 +91,7 @@ export default function ProductsPage() {
         "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
       sizes: ["50x100", "75x150", "100x200", "150x300"],
       mutu: ">= K-350",
-      image_path: "/products/architectural-elements.h03-2k.png",
+      image: ArchElemtH32K,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -92,7 +101,7 @@ export default function ProductsPage() {
         "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
       sizes: ["50x100", "75x150", "100x200", "150x300"],
       mutu: ">= K-350",
-      image_path: "/products/cynder-block-h03-2k.png",
+      image: CynderBlockH32K,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -102,7 +111,7 @@ export default function ProductsPage() {
         "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
       sizes: ["50x100", "75x150", "100x200", "150x300"],
       mutu: ">= K-350",
-      image_path: "/products/concrete-facade-h03-2k.png",
+      image: ConcreteFacadeH32K,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -112,7 +121,7 @@ export default function ProductsPage() {
         "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
       sizes: ["50x100", "75x150", "100x200", "150x300"],
       mutu: ">= K-350",
-      image_path: "/products/concrete-slabs-on-wood-planks-h03-2k.png",
+      image: SlabWoodPlankH32K,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
     {
@@ -122,7 +131,7 @@ export default function ProductsPage() {
         "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
       sizes: ["50x100", "75x150", "100x200", "150x300"],
       mutu: ">= K-350",
-      image_path: "/products/concrete-wall-h03-2k.png",
+      image: ConcreteWall,
       applications: ["Drainase Jalan", "Saluran Irigasi"],
     },
   ];
@@ -249,7 +258,7 @@ export default function ProductsPage() {
                   <div className="h-[300px] w-full mb-4 rounded-md relative">
                     <div className="relative h-full overflow-hidden rounded-t-lg flex items-center justify-center">
                       <Image
-                        src={`/api/image?path=${product.image_path}`}
+                        src={product.image}
                         alt={product.name}
                         fill={true}
                         className="object-contain cursor-pointer hover:scale-115 transition-all z-1"

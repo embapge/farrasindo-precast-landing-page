@@ -2,6 +2,8 @@ import { Contact } from "@/components/Contact";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { Metadata } from "next";
+import PrecastBackground from "@/components/images/precast-background(3).jpg";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "PT. Farracon Precast Industri",
@@ -14,8 +16,8 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="relative h-[88vh] min-h-[400px] pt-20">
         <div className="absolute inset-0">
-          <ImageWithFallback
-            src="/api/image?path=/precast-background(3).jpg"
+          <Image
+            src={PrecastBackground}
             alt="Contact Us"
             className="w-full h-full object-cover"
           />

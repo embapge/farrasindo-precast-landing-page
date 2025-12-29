@@ -1,45 +1,7 @@
-import Image from "next/image";
-import { Card, CardContent } from "./ui/card";
 import Testimonial from "./Testimonial";
 import ClientDetail from "./ClientDetail";
 
 export function Clients() {
-  const clientCategories = [
-    {
-      category: "Kontraktor Utama",
-      clients: [
-        "PT Wijaya Karya (Persero) Tbk",
-        "PT Adhi Karya (Persero) Tbk",
-        "PT Waskita Karya (Persero) Tbk",
-        "PT Pembangunan Perumahan (Persero) Tbk",
-        "PT Hutama Karya (Persero)",
-        "PT Nindya Karya (Persero)",
-      ],
-    },
-    {
-      category: "Developer",
-      clients: [
-        "Ciputra Group",
-        "Sinar Mas Land",
-        "Agung Podomoro Land",
-        "Summarecon Agung",
-        "BSD City",
-        "Lippo Group",
-      ],
-    },
-    {
-      category: "Pemerintah & BUMN",
-      clients: [
-        "Kementerian PUPR",
-        "Dinas Pekerjaan Umum DKI Jakarta",
-        "Pemerintah Provinsi Jawa Barat",
-        "Pemerintah Provinsi Jawa Tengah",
-        "PT Jasa Marga (Persero) Tbk",
-        "PT Perusahaan Listrik Negara (Persero)",
-      ],
-    },
-  ];
-
   const testimonials = [
     {
       name: "Ir. Bambang Suryanto",

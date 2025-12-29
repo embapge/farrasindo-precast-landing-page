@@ -5,20 +5,21 @@ import {
   CheckCircle2,
   ChevronLeft,
   ChevronRight,
-  Award,
-  Shield,
   Star,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useRef } from "react";
-import { QualityTable } from "@/components/QualityTable";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import CranePrecastAsset from "@/components/images/assets/crane-precast.jpg";
 import PrecastAsset from "@/components/images/precast-background.jpg";
+import HomeBackground1 from "@/components/images/backgrounds/home-background1.jpg";
+import UDitch from "@/components/images/products/u-ditch.png";
+import BoxCulvert from "@/components/images/products/box-culvert.png";
+import WallFacadeH32K from "@/components/images/products/concrete-wall-facade-h03-2k.png";
+import Barrier from "@/components/images/products/barrier.png";
+import ArchElemtH32K from "@/components/images/products/architectural-elements.h03-2k.png";
 
 // Simple AnimatedNumber component
 import { useEffect, useState } from "react";
@@ -72,8 +73,8 @@ function AnimatedNumber({ end }: { end: number }) {
 export default function HomePage() {
   const { push } = useRouter();
   const productsScrollRef = useRef<HTMLDivElement | null>(null);
-  const portofolioScrollRef = useRef<HTMLDivElement | null>(null);
-  const companyScrollRef = useRef<HTMLDivElement | null>(null);
+  // const portofolioScrollRef = useRef<HTMLDivElement | null>(null);
+  // const companyScrollRef = useRef<HTMLDivElement | null>(null);
 
   const scroll = (
     ref: React.RefObject<HTMLDivElement | null>,
@@ -110,7 +111,7 @@ export default function HomePage() {
         "800x800",
         "800x1000",
       ],
-      image_path: "/products/u-ditch.png",
+      image: UDitch,
     },
     {
       name: "Box Culvert",
@@ -118,7 +119,7 @@ export default function HomePage() {
       description: "Gorong-gorong berbentuk kotak untuk drainase",
       sizes: ["600x600", "800x800", "1000x1000", "2000x2000"],
       mutu: ">= K-350",
-      image_path: "/products/box-culvert.png",
+      image: BoxCulvert,
     },
     {
       name: "Concrete Wall",
@@ -127,7 +128,7 @@ export default function HomePage() {
         "Dinding beton untuk memberikan kekuatan, daya tahan, dan stabilitas pada sebuah bangunan",
       sizes: ["100x100", "150x150", "200x200", "300x300"],
       mutu: ">= K-350",
-      image_path: "/products/concrete-wall-facade-h03-2k.png",
+      image: WallFacadeH32K,
     },
     {
       name: "Road Barrier",
@@ -135,7 +136,7 @@ export default function HomePage() {
       description: "Pembatas jalan untuk keamanan lalu lintas",
       sizes: ["300x700x2500", "600x1000x1000"],
       mutu: ">= K-350",
-      image_path: "/products/barrier.png",
+      image: Barrier,
     },
     {
       name: "Panel Arsitektur",
@@ -144,7 +145,7 @@ export default function HomePage() {
         "Pelapis luar bangunan yang dekoratif, pelindung dari elemen eksternal, serta sebagai elemen struktural atau non-struktural",
       sizes: ["50x100", "75x150", "100x200", "150x300"],
       mutu: ">= K-350",
-      image_path: "/products/architectural-elements.h03-2k.png",
+      image: ArchElemtH32K,
     },
   ];
 
@@ -221,8 +222,8 @@ export default function HomePage() {
       {/* Hero Section with Full Screen Image */}
       <section className="relative md:h-screen pt-25 pb-10">
         <div className="absolute inset-0">
-          <ImageWithFallback
-            src={`/api/image?path=/backgrounds/home-background1.jpg`}
+          <Image
+            src={HomeBackground1}
             alt="Farracon Precast Factory"
             className="w-full h-full object-cover"
           />
@@ -372,7 +373,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden hover:scale-105 transition-all cursor-pointer">
                 <Image
-                  src={`/api/image?path=/backgrounds/home-background1.jpg`}
+                  src={HomeBackground1}
                   width={750}
                   height={750}
                   alt="Crane Precast"
@@ -425,7 +426,7 @@ export default function HomePage() {
                 <div className="relative h-80 overflow-hidden rounded-t-lg">
                   <div className="w-full h-full flex items-center justify-center">
                     <Image
-                      src={`/api/image?path=${product.image_path}`}
+                      src={product.image}
                       width={200}
                       height={200}
                       alt="U Ditch"
@@ -509,75 +510,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Portofolio Overview */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-4">
-            <div className="text-center w-full">
-              <h2 className="mb-1 text-green-400 font-semibold text-xl">
-                Portofolio
-              </h2>
-              <h2 className="mb-4 text-gray-900 text-4xl font-bold">
-                Projek Yang Telah Kami Kerjakan
-              </h2>
-            </div>
-            <div className="hidden md:flex">
-              <button
-                onClick={() => scroll(portofolioScrollRef, "left")}
-                className="bg-orange-500 p-2 rounded-l-lg cursor-pointer hover:scale-105 transition-all hover:bg-orange-600 text-white"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button
-                onClick={() => scroll(portofolioScrollRef, "right")}
-                className="bg-orange-500 p-2 rounded-r-lg cursor-pointer hover:scale-105 transition-all hover:bg-orange-600 text-white"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          </div>
-
-          <div
-            ref={portofolioScrollRef}
-            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {featuredProjects.map((project, index) => (
-              <Card
-                key={index}
-                className="flex-shrink-0 w-96 hover:shadow-xl transition-shadow snap-start overflow-hidden border-orange-500"
-              >
-                <div className="relative h-64">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/40"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <Badge className="mb-3 backdrop-blur-sm bg-orange-500/20 border border-orange-500/50">
-                      {project.year}
-                    </Badge>
-                    <h3 className="mb-2">{project.title}</h3>
-                    <p className="text-gray-200 text-sm">{project.location}</p>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-3">
-            <button
-              onClick={() => push("portofolio")}
-              className="border-orange-600 text-orange-600 hover:bg-orange-50 inline-flex items-center cursor-pointer hover:scale-105 transition-all font-semibold"
-            >
-              Lihat Semua Portofolio
-              <ArrowRight className="ml-2" size={18} />
-            </button>
-          </div>
-        </div>
-      </section> */}
-
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="z-10 w-full relative py-12 px-6 min-h-[700px] md:min-h-[500px] flex flex-col justify-between">
@@ -595,33 +527,6 @@ export default function HomePage() {
               Komitmen kami terhadap kualitas dan kepuasan pelanggan
             </p>
           </div>
-
-          {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer hover:scale-105 h-[150px] flex items-center justify-center">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-2">98%</div>
-                <p className="text-orange-100">Tingkat Kepuasan Klien</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer hover:scale-105 h-[150px] flex items-center justify-center">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-2">95%</div>
-                <p className="text-orange-100">On-Time Delivery</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer hover:scale-105 h-[150px] flex items-center justify-center">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-2">ISO</div>
-                <p className="text-orange-100">Quality Certified</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 transition-all cursor-pointer hover:scale-105 h-[150px] flex items-center justify-center">
-              <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-2">24/7</div>
-                <p className="text-orange-100">Customer Support</p>
-              </CardContent>
-            </Card>
-          </div> */}
 
           <div className="text-center mt-12 relative">
             <Button

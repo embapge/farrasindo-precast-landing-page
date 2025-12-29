@@ -9,13 +9,10 @@ import {
   Shield,
   TrendingUp,
   Heart,
-  Wrench,
   Building2,
   CheckCircle2,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
-import { QualityTable } from "@/components/QualityTable";
 import { Certificates } from "@/components/Certificates";
 import { Clients } from "@/components/Clients";
 import FarraconBackground from "@/components/images/precast-background(1).jpg";
